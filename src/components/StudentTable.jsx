@@ -8,7 +8,7 @@ const students = [
   { id: 5, name: 'Zara', English: 80, Maths: 85, Science: 96, SocialScience: 68 },
 ];
 
-const ITEMS_PER_PAGE = 2; // Adjust items per page as needed
+const ITEMS_PER_PAGE = 2; //Based on our requirement
 
 export default function StudentTable() {
   const [subject, setSubject] = useState('English');
@@ -33,7 +33,7 @@ export default function StudentTable() {
     }
 
     setFilteredStudents(filtered);
-    setCurrentPage(1); // Reset to first page
+    setCurrentPage(1); // Reseting to first page
   };
 
   const clearFilter = () => {
@@ -62,7 +62,7 @@ export default function StudentTable() {
 
   return (
     <div className="p-4">
-      {/* Filter Controls */}
+      {/* Filtering Controls on the UI */}
       <div className="flex gap-4 mb-4">
         <select
           className="p-2 border rounded"
@@ -125,7 +125,7 @@ export default function StudentTable() {
         </button>
       </div>
 
-      {/* Table */}
+      {/* Table of the Student Data */}
       <table className="w-full border-collapse border border-gray-400">
         <thead>
           <tr>
@@ -153,7 +153,7 @@ export default function StudentTable() {
         </tbody>
       </table>
 
-      {/* Pagination Controls */}
+      {/* Pagination Controls which is for large dataSet */}
       <div className="flex justify-center gap-2 mt-4">
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
